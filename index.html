@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>QAZBIZ-ART</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: white;
+      background: url("https://parispeaceforum.org/app/uploads/2023/09/net-zero-space-initiative-1.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+    h1 {
+      margin-top: 30px;
+      font-size: 64px;          
+      letter-spacing: 4px;      
+      text-transform: uppercase;
+      text-shadow: 2px 2px 8px black;
+    }
+    h3 {
+      margin-top: 10px;
+      font-size: 28px;
+      font-weight: normal;
+      text-shadow: 1px 1px 6px black;
+    }
+    .image-row {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .image-row img {
+      width: 400px;
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .image-row img:hover {
+      transform: scale(1.05);
+    }
+    h2 {
+      margin-top: 40px;
+      font-size: 48px;
+      text-shadow: 1px 1px 6px black;
+    }
+    h4 {
+      margin-top: 10px;
+      font-size: 32px;
+      font-weight: normal;
+      text-shadow: 1px 1px 6px black;
+    }
+    p.contact-text {
+      margin-top: 30px;
+      font-size: 22px;
+      text-shadow: 1px 1px 6px black;
+    }
+    a.tiktok-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 24px;
+      color: white;
+      text-decoration: none;
+      border: 2px solid white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background 0.3s, color 0.3s;
+      text-shadow: 1px 1px 6px black;
+    }
+    a.tiktok-link:hover {
+      background: white;
+      color: black;
+    }
+
+    /* Lightbox стили */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: opacity 0.5s;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px white;
+      animation: fadeIn 0.5s;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.8);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+  <h1>QAZBIZ-ART</h1>
+  <h3>Логотип привлекающий вам клиентов</h3>
+  <div class="image-row">
+    <img src="photo1.png" alt="Картинка 1">
+    <img src="photo2.png" alt="Картинка 2">
+    <img src="photo3.png" alt="Картинка 3">
+  </div>
+  <h2>Наши работы</h2>
+  <h4>1 логотип = 10&nbsp;000 тенге</h4>
+  <p class="contact-text">За заказом можете написать в ТикТоке в личку</p>
+  <a class="tiktok-link" href="https://www.tiktok.com/@qazbizart?_t=ZM-8zAKBY73IGu&_r=1" target="_blank">
+    Мы в TikTok
+  </a>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Полноэкранное изображение">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const images = document.querySelectorAll('.image-row img');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
